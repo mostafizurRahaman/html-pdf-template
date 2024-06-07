@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Progress Ring</title>
+  <style>
+    /*  Progress Bar Css  */
+    .progress-ring {
+      position: relative;
+      width: 54px;
+      height: 54px;
+    }
+
+    .progress-ring svg {
+      width: 54px;
+      height: 54px;
+      transform: rotate(-90deg);
+    }
+
+    .progress-ring circle {
+      width: 100%;
+      height: 100%;
+      fill: transparent;
+      stroke-width: 7.5;
+      cx: 27;
+      cy: 27;
+      r: 21;
+    }
+
+    .progress-ring circle.bg {
+      stroke: #f2a6a6;
+    }
+
+    .progress-ring circle.progress {
+      stroke: red;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.35s;
+    }
+
+    .progress-ring .progress-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-family: Arial, sans-serif;
+
+    }
+
+    .progress-ring .progress-text .percentage {
+
+      font-size: 8px;
+    }
+
+    .progress-ring .progress-text .month {
+      color: b#404040;
+      font-size: 5px;
+
+    }
+
+    /*  Class One  */
+    .progress-ring1 {
+      position: relative;
+      width: 54px;
+      height: 54px;
+    }
+
+    .progress-ring1 svg {
+      width: 54px;
+      height: 54px;
+      transform: rotate(-90deg);
+    }
+
+    .progress-ring1 circle {
+      width: 100%;
+      height: 100%;
+      fill: transparent;
+      stroke-width: 7.5;
+      cx: 27;
+      cy: 27;
+      r: 21;
+    }
+
+    .progress-ring1 circle.bg1 {
+      stroke: #f2a6a6;
+    }
+
+    .progress-ring1 circle.progress1 {
+      stroke: red;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.35s;
+    }
+
+    .progress-ring1 .progress-text1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .progress-ring1 .progress-text1 .percentage1 {
+      font-size: 8px;
+    }
+
+    .progress-ring1 .progress-text1 .month1 {
+      color: b#404040;
+      font-size: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="progress-ring" id="progressRing">
+    <svg>
+      <circle class="bg" cx="27" cy="19" r="15"></circle>
+      <circle class="progress" cx="19" cy="19" r="15"></circle>
+    </svg>
+    <div class="progress-text">
+      <div class="percentage primary fs-8 fw-600">88%</div>
+      <div class="month fw-400">May 2024</div>
+    </div>
+  </div>
+
+  <div class="progress-ring1" id="progressRing1">
+    <svg>
+      <circle class="bg1" cx="19" cy="19" r="21"></circle>
+      <circle class="progress1" cx="19" cy="19" r="21"></circle>
+    </svg>
+    <div class="progress-text1">
+      <div class="percentage1">100%</div>
+      <div class="month1">May 2024</div>
+    </div>
+  </div>
+
+  <script>
+    const progressRing = document.getElementById('progressRing');
+    const progressCircle = progressRing.querySelector('.progress-ring .progress');
+    const radius = progressCircle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+
+    progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+    progressCircle.style.strokeDashoffset = `${circumference}`;
+
+    function setProgress(percent) {
+      const offset = circumference - (percent / 100 * circumference);
+      console.log(offset)
+      progressCircle.style.strokeDashoffset = offset;
+    }
+    setProgress(100);
+
+    const progressRing1 = document.getElementById('progressRing1');
+    const progressCircle1 = progressRing1.querySelector('.progress-ring1 .progress1');
+    const radius1 = progressCircle1.r.baseVal.value;
+    const circumference1 = 2 * Math.PI * radius1;
+
+    progressCircle1.style.strokeDasharray = `${circumference1} ${circumference1}`;
+    progressCircle1.style.strokeDashoffset = `${circumference1}`;
+
+    function setProgress1(percent) {
+      const offset1 = circumference1 - (percent / 100 * circumference1);
+      progressCircle1.style.strokeDashoffset = offset1;
+    }
+    setProgress1(50);
+  </script>
+</body>
+
+</html>

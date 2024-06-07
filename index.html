@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <title>Document</title>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font-family: "Lexend", sans-serif !important;
+      box-sizing: border-box;
+    }
+
+    .page_size {
+      width: 100% !important;
+      height: 30cm !important;
+    }
+
+    /*  font-settings  */
+    .fs-2 {
+      font-size: 2px;
+    }
+
+    .fs-4 {
+      font-size: 4px;
+    }
+
+    .fs-6 {
+      font-size: 6px;
+    }
+
+    .fs-8 {
+      font-size: 8px;
+    }
+
+    .fs-10 {
+      font-size: 10px;
+    }
+
+    .fs-12 {
+      font-size: 12px;
+    }
+
+    .fs-14 {
+      font-size: 14px;
+    }
+
+
+    /*  Font-weight  */
+    .fw-100 {
+      font-weight: 100;
+    }
+
+    .fw-400 {
+      font-weight: 400;
+    }
+
+    .fw-500 {
+      font-weight: 500;
+    }
+
+    .fw-600 {
+      font-weight: 600;
+    }
+
+    .fw-700 {
+      font-weight: 700;
+    }
+
+
+
+
+    /*  colors  */
+    .black_75 {
+      color: rgba(0, 0, 0, 0.75)
+    }
+
+    .primary {
+      color: #EA2224;
+    }
+
+    .secondary {
+      color: #272727;
+    }
+
+    .accent {
+      color: #232323
+    }
+
+    .black_2 {
+      color: #868686;
+    }
+
+    .gray-600 {
+      color: #5E6470
+    }
+
+
+    /*  flex classes */
+    .flex {
+      display: flex;
+    }
+
+    .justify-start {
+      justify-content: start;
+    }
+
+    .justify-end {
+      justify-content: end;
+    }
+
+    .justify-center {
+      justify-content: center;
+    }
+
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .justify-around {
+      justify-content: space-around;
+    }
+
+    .justify-evenly {
+      justify-content: space-around;
+    }
+
+    .items-start {
+      align-items: start;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .items-end {
+      align-items: end;
+    }
+
+    .flex-column {
+      flex-direction: column;
+    }
+
+
+
+
+    /*  Progress Bar Css  */
+    .progress-ring {
+      position: relative;
+      width: 54px;
+      height: 54px;
+    }
+
+    .progress-ring svg {
+      width: 54px;
+      height: 54px;
+      transform: rotate(-90deg);
+    }
+
+    .progress-ring circle {
+      width: 100%;
+      height: 100%;
+      fill: transparent;
+      stroke-width: 7.5;
+      cx: 27;
+      cy: 27;
+      r: 21;
+    }
+
+    .progress-ring circle.bg {
+      stroke: #f2a6a6;
+    }
+
+    .progress-ring circle.progress {
+      stroke: red;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.35s;
+    }
+
+    .progress-ring .progress-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-family: Arial, sans-serif;
+
+    }
+
+    .progress-ring .progress-text .percentage {
+
+      font-size: 8px;
+    }
+
+    .progress-ring .progress-text .month {
+      color: b#404040;
+      font-size: 5px;
+
+    }
+
+    /*  Class One  */
+    .progress-ring1 {
+      position: relative;
+      width: 54px;
+      height: 54px;
+    }
+
+    .progress-ring1 svg {
+      width: 54px;
+      height: 54px;
+      transform: rotate(-90deg);
+    }
+
+    .progress-ring1 circle {
+      width: 100%;
+      height: 100%;
+      fill: transparent;
+      stroke-width: 7.5;
+      cx: 27;
+      cy: 27;
+      r: 21;
+    }
+
+    .progress-ring1 circle.bg1 {
+      stroke: #f2a6a6;
+    }
+
+    .progress-ring1 circle.progress1 {
+      stroke: red;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.35s;
+    }
+
+    .progress-ring1 .progress-text1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .progress-ring1 .progress-text1 .percentage1 {
+      font-size: 8px;
+    }
+
+    .progress-ring1 .progress-text1 .month1 {
+      color: b#404040;
+      font-size: 5px;
+    }
+
+
+
+    /*  Table Css Start From Here  */
+
+    .tbl_p_wrap {
+      width: 100% !important;
+      padding: 32px !important;
+    }
+
+    .fw-400 {
+      font-weight: 400 !important;
+    }
+
+    .fw-500 {
+      font-weight: 500 !important;
+    }
+
+    .fw-600 {
+      font-weight: 600 !important;
+    }
+
+    .fw-700 {
+      font-weight: 700 !important;
+    }
+
+    .text_primary_color {
+      color: #EA2224 !important;
+    }
+
+    .text_secondary_color {
+
+      color: #272727 !important;
+    }
+
+    .text_primary_black {
+      color: #1F1F1F;
+    }
+
+    .text_accent_color {
+      color: #5E6470 !important;
+    }
+
+    .text-white {
+      color: #fff;
+    }
+
+    .fs-14 {
+      font-size: 14px !important;
+    }
+
+    .fs-10 {
+      font-size: 10px !important;
+    }
+
+    .fs-9 {
+      font-size: 9px !important;
+    }
+
+    .fs-8 {
+      font-size: 8px !important;
+    }
+
+    .fs-6 {
+      font-size: 6px !important;
+    }
+
+    .flex {
+      display: flex !important;
+    }
+
+    .display {
+      display: block !important;
+    }
+
+    .align-items-center {
+      align-items: center;
+    }
+
+    .justify-content-between {
+      justify-content: space-between;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .mt-2 {
+      margin-top: 2px !important;
+    }
+
+    .text-capitalize {
+      text-transform: capitalize;
+    }
+
+    .text-uppercase {
+      text-transform: uppercase;
+    }
+
+    .gap-2 {
+      gap: 2px;
+    }
+
+    .gap-4 {
+      gap: 4px;
+
+    }
+
+    .gap-8 {
+      gap: 8px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-start {
+      text-align: start;
+    }
+
+    .text-end {
+      text-align: end;
+    }
+
+    .mt-32 {
+      margin-top: 32px !important;
+    }
+
+    .invoice_statistics {
+      border: 0.6px solid #DFDFDF !important;
+    }
+
+    .tbl_header {
+      border: 0.6px solid #DFDFDF !important;
+      margin-top: 17px !important;
+      padding: 9px !important;
+    }
+
+    table {
+      margin-right: 30px;
+      border-collapse: collapse;
+      font-size: 6px;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    thead {
+      background-color: #EA2224;
+      color: white;
+    }
+
+    thead th {
+      padding: 5.5px 0px !important;
+      padding-right: 18px !important;
+      text-align: left;
+
+    }
+
+    tbody tr {
+      background-color: #ffffff;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    tbody tr:nth-of-type(even) {
+      background-color: #f9f9f9;
+    }
+
+    tbody td {
+      padding: 4px 0px !important;
+      padding-right: 16px !important;
+      font-size: 6px;
+      color: #333333;
+    }
+
+    tbody tr td,
+    tr th {
+      padding-left: 2px !important;
+    }
+
+
+
+    .status {
+      display: inline-block;
+      padding: 4px 5px !important;
+      border-radius: 12px;
+      color: #ffffff;
+    }
+
+    .status.paid {
+      background-color: #4CAF50;
+    }
+
+    .status.unpaid {
+      background-color: #EA2224;
+    }
+
+    .justify-content-around {
+      justify-content: space-around;
+    }
+
+    .justify-space-around {
+      justify-content: space-around !important;
+    }
+
+    tr td:first-child {
+      padding-left: 9px !important;
+    }
+
+    tr th:first-child {
+      padding-left: 9px !important;
+    }
+
+    tbody {
+      border-left: 0.6px solid #dfdfdf !important;
+      border-right: 0.6px solid #dfdfdf !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page_size">
+    <div style="padding: 32px 24px; width: 595px; ">
+
+      <!--  Top Title Start  -->
+      <div class="flex items-center justify-between">
+        <div class="flex flex-column" style="gap: 2px">
+          <h3 class="secondary fw-500 ">Driver Monthly Report</h3>
+          <p class="fw-400  gray-600 fs-10">Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="154" height="30" viewBox="0 0 154 30" fill="none">
+            <path
+              d="M25.5526 0.893084C25.5445 0.925614 25.5607 0.961243 25.6012 0.99997C25.6417 1.0387 25.6352 1.06813 25.5818 1.08827L25.2999 1.19515C25.292 1.19835 25.2854 1.2038 25.2809 1.21075C25.2764 1.2177 25.2742 1.22582 25.2748 1.23397C25.2753 1.24213 25.2785 1.24993 25.2838 1.25629C25.2892 1.26266 25.2965 1.26728 25.3047 1.26951C25.329 1.27726 25.3533 1.285 25.3776 1.29275C25.4408 1.31598 25.4708 1.36013 25.4676 1.42519C25.4189 2.30119 25.1881 3.58615 25.4141 4.41568C25.5259 4.81844 25.6928 5.13058 25.9147 5.3521L22.466 5.35442C22.4018 5.35437 22.3387 5.37046 22.2833 5.40106C22.2278 5.43167 22.1818 5.4757 22.1501 5.52869L20.5533 8.17064C20.5406 8.19142 20.5338 8.21505 20.5339 8.23915C20.5339 8.26326 20.5406 8.28698 20.5534 8.30794C20.5663 8.32891 20.5847 8.34636 20.6068 8.35857C20.629 8.37077 20.6541 8.37728 20.6797 8.37745H28.9551C29.0604 8.37745 29.0864 8.42159 29.0329 8.50989L26.5029 12.7482C26.4608 12.8163 26.3992 12.8504 26.3182 12.8504H17.8459C17.8075 12.8504 17.7698 12.86 17.7365 12.8784C17.7032 12.8967 17.6756 12.9232 17.6563 12.955L12.5453 21.3943C12.4821 21.4997 12.4189 21.4997 12.3557 21.3943L0.0240368 1.00694C-0.0245706 0.924839 0.000542605 0.883789 0.0993775 0.883789H5.25419C5.33844 0.883789 5.40163 0.918643 5.44375 0.988351L12.4019 12.474C12.4359 12.5313 12.4699 12.5313 12.504 12.474L19.4402 1.01391C19.4872 0.934908 19.5585 0.895408 19.6541 0.895408L25.5526 0.893084Z"
+              fill="#ED2124" />
+            <path
+              d="M25.5533 0.892578L33.4131 0.897225C33.5298 0.897225 33.5589 0.945247 33.5006 1.04129L31.0022 5.22612C30.9536 5.30512 30.8823 5.3454 30.7883 5.34695L25.9154 5.35159C25.6935 5.13008 25.5266 4.81794 25.4148 4.41518C25.1888 3.58565 25.4196 2.30069 25.4682 1.42469C25.4715 1.35962 25.4415 1.31548 25.3783 1.29224C25.354 1.28449 25.3297 1.27675 25.3054 1.269C25.2972 1.26677 25.2899 1.26215 25.2845 1.25579C25.2792 1.24942 25.276 1.24163 25.2755 1.23347C25.2749 1.22531 25.2771 1.2172 25.2816 1.21025C25.286 1.20329 25.2927 1.19784 25.3006 1.19465L25.5825 1.08776C25.6359 1.06762 25.6424 1.03819 25.6019 0.999464C25.5614 0.960737 25.5452 0.925109 25.5533 0.892578Z"
+              fill="#ED2124" />
+            <path
+              d="M42.6978 21.4744L38.8262 7.54492H42.9627L44.7558 15.513C44.8577 15.9611 44.9188 16.4871 44.9596 17.091C45.2653 16.2533 45.4894 15.7273 45.6117 15.474L49.4629 7.54492H53.8031L46.0803 21.4744H42.6978Z"
+              fill="#ED2124" />
+            <path d="M56.569 21.4744L58.8716 7.54492H62.8451L60.5425 21.4744H56.569Z" fill="#ED2124" />
+            <path
+              d="M65.8509 21.4744L74.2258 10.6036H68.6222L69.0705 7.54492H81.0928L72.9013 18.1625H79.3404L78.8106 21.4744H65.8509Z"
+              fill="#ED2124" />
+            <path
+              d="M84.2999 21.4744L86.6025 7.54492H95.0182L94.4884 10.7399H89.9647L89.5775 13.0388H93.8159L93.3065 16.039H89.0885L88.1919 21.4744H84.2999Z"
+              fill="#ED2124" />
+            <path d="M98.992 21.4744L101.295 7.54492H105.207L103.454 18.143H108.263L107.713 21.4744H98.992Z"
+              fill="#ED2124" />
+            <path
+              d="M117.488 18.3768H121.992L121.482 21.4744H113.087L115.39 7.54492H123.785L123.255 10.7594H118.752L118.385 13.0388H122.562L122.073 16.0585H117.876L117.488 18.3768Z"
+              fill="#ED2124" />
+            <path
+              d="M132.26 18.3768H136.763L136.254 21.4744H127.859L130.161 7.54492H138.556L138.027 10.7594H133.523L133.157 13.0388H137.334L136.845 16.0585H132.647L132.26 18.3768Z"
+              fill="#ED2124" />
+            <path
+              d="M144.648 21.4744L146.42 10.7789H143.16L143.71 7.54492H154.001L153.45 10.7789H150.333L148.56 21.4744H144.648Z"
+              fill="#ED2124" />
+            <path
+              d="M94.3496 24.1043H95.3632C95.7465 24.1043 96.041 24.1229 96.2468 24.1602C96.4568 24.1954 96.6507 24.2627 96.8283 24.3621C97.1553 24.5422 97.413 24.8124 97.6014 25.1727C97.7898 25.5329 97.884 25.9357 97.884 26.3808C97.884 26.8529 97.7779 27.2898 97.5657 27.6915C97.4595 27.8903 97.3361 28.0652 97.1953 28.2164C97.0546 28.3655 96.8932 28.4928 96.7113 28.5984C96.4991 28.7143 96.2771 28.7941 96.0454 28.8375C95.9219 28.8582 95.7747 28.8738 95.6036 28.8841C95.4325 28.8945 95.2322 28.8997 95.0026 28.8997H93.7324L94.3496 24.1043ZM95.0058 24.7658L94.5608 28.2381H95.126C95.5418 28.2381 95.8667 28.1988 96.1006 28.1201C96.328 28.0435 96.5261 27.9006 96.6951 27.6915C96.9896 27.3354 97.1369 26.8892 97.1369 26.3529C97.1369 26.0195 97.0708 25.7276 96.9387 25.477C96.8044 25.2224 96.6225 25.0381 96.393 24.9242C96.1742 24.8186 95.8505 24.7658 95.4216 24.7658H95.0058Z"
+              fill="#ED2124" />
+            <path
+              d="M101.408 26.8778L102.668 28.8997H101.882L100.693 26.9275H100.423L100.17 28.8997H99.4261L100.043 24.1043H101.028C101.348 24.1043 101.603 24.1322 101.791 24.1881C101.977 24.2399 102.14 24.3351 102.278 24.4739C102.54 24.7306 102.671 25.0619 102.671 25.4677C102.671 26.211 102.25 26.6811 101.408 26.8778ZM100.7 24.7658L100.505 26.3063H100.846C101.097 26.3063 101.284 26.2835 101.408 26.238C101.54 26.1924 101.65 26.1148 101.739 26.005C101.86 25.8518 101.921 25.6717 101.921 25.4646C101.921 25.2224 101.847 25.0453 101.7 24.9335C101.555 24.8217 101.325 24.7658 101.011 24.7658H100.7Z"
+              fill="#ED2124" />
+            <path d="M105.682 24.1043L105.065 28.8997H104.321L104.938 24.1043H105.682Z" fill="#ED2124" />
+            <path d="M111.609 24.1043L108.754 29.1171L107.175 24.1043H107.929L108.968 27.4461L110.807 24.1043H111.609Z"
+              fill="#ED2124" />
+            <path
+              d="M115.776 24.1043L115.692 24.7658H113.85L113.691 26.0081H115.533L115.455 26.6231H113.613L113.405 28.2381H115.247L115.159 28.8997H112.577L113.194 24.1043H115.776Z"
+              fill="#ED2124" />
+            <path
+              d="M123.285 24.7161L122.788 25.1696C122.552 24.8383 122.281 24.6726 121.976 24.6726C121.755 24.6726 121.572 24.7379 121.427 24.8683C121.282 24.9987 121.209 25.1623 121.209 25.359C121.209 25.5164 121.259 25.652 121.359 25.7659C121.409 25.8197 121.481 25.8808 121.576 25.9491C121.674 26.0175 121.795 26.093 121.94 26.1759C122.371 26.416 122.659 26.6334 122.804 26.8281C122.952 27.0248 123.025 27.2826 123.025 27.6014C123.025 28.0155 122.882 28.351 122.596 28.6077C122.315 28.8645 121.944 28.9928 121.482 28.9928C121.11 28.9928 120.795 28.9162 120.537 28.763C120.407 28.6864 120.286 28.587 120.173 28.4648C120.06 28.3406 119.952 28.1905 119.848 28.0145L120.413 27.648C120.567 27.9068 120.718 28.0849 120.865 28.1822C121.012 28.2795 121.204 28.3282 121.44 28.3282C121.702 28.3282 121.907 28.2619 122.054 28.1294C122.203 27.9969 122.278 27.8085 122.278 27.5642C122.278 27.3964 122.224 27.2546 122.116 27.1387C122.062 27.0786 121.98 27.0113 121.872 26.9368C121.766 26.8622 121.631 26.7784 121.466 26.6852C121.089 26.4719 120.826 26.269 120.677 26.0765C120.534 25.8839 120.462 25.6427 120.462 25.3528C120.462 24.9656 120.603 24.6447 120.885 24.39C121.166 24.1333 121.521 24.0049 121.95 24.0049C122.229 24.0049 122.468 24.0587 122.665 24.1664C122.866 24.2741 123.073 24.4573 123.285 24.7161Z"
+              fill="#ED2124" />
+            <path
+              d="M129.05 24.1043L128.687 26.943C128.604 27.5683 128.45 28.0259 128.225 28.3158C127.864 28.7671 127.361 28.9928 126.718 28.9928C126.202 28.9928 125.773 28.8437 125.428 28.5456C125.086 28.2433 124.915 27.8685 124.915 27.4213C124.915 27.326 124.918 27.2256 124.925 27.12C124.933 27.0144 124.945 26.9026 124.96 26.7846L125.305 24.1043H126.045L125.691 26.8747C125.681 26.9575 125.672 27.0341 125.665 27.1045C125.661 27.1749 125.659 27.2401 125.659 27.3002C125.659 27.619 125.752 27.8706 125.938 28.0549C126.127 28.2391 126.382 28.3313 126.705 28.3313C127.082 28.3313 127.368 28.2153 127.563 27.9834C127.757 27.7495 127.89 27.3695 127.959 26.8436L128.31 24.1043H129.05Z"
+              fill="#ED2124" />
+            <path
+              d="M134.803 24.5329L134.702 25.3093C134.267 24.8869 133.748 24.6757 133.146 24.6757C132.615 24.6757 132.186 24.8559 131.859 25.2162C131.53 25.5744 131.366 26.0413 131.366 26.6169C131.366 27.1552 131.524 27.5755 131.84 27.8778C132.154 28.1781 132.598 28.3282 133.172 28.3282C133.65 28.3282 134.073 28.1874 134.439 27.9058L134.332 28.7475C133.87 28.911 133.44 28.9928 133.042 28.9928C132.314 28.9928 131.728 28.7723 131.284 28.3313C130.84 27.8944 130.618 27.3126 130.618 26.5858C130.618 25.8446 130.855 25.2296 131.327 24.741C131.801 24.2523 132.396 24.008 133.113 24.008C133.679 24.008 134.242 24.1829 134.803 24.5329Z"
+              fill="#ED2124" />
+            <path
+              d="M140.327 24.5329L140.227 25.3093C139.791 24.8869 139.273 24.6757 138.671 24.6757C138.14 24.6757 137.711 24.8559 137.384 25.2162C137.055 25.5744 136.89 26.0413 136.89 26.6169C136.89 27.1552 137.049 27.5755 137.365 27.8778C137.679 28.1781 138.123 28.3282 138.697 28.3282C139.175 28.3282 139.598 28.1874 139.964 27.9058L139.856 28.7475C139.395 28.911 138.965 28.9928 138.567 28.9928C137.839 28.9928 137.253 28.7723 136.809 28.3313C136.365 27.8944 136.143 27.3126 136.143 26.5858C136.143 25.8446 136.379 25.2296 136.851 24.741C137.326 24.2523 137.921 24.008 138.638 24.008C139.203 24.008 139.766 24.1829 140.327 24.5329Z"
+              fill="#ED2124" />
+            <path
+              d="M144.819 24.1043L144.735 24.7658H142.893L142.734 26.0081H144.575L144.498 26.6231H142.656L142.448 28.2381H144.29L144.202 28.8997H141.619L142.237 24.1043H144.819Z"
+              fill="#ED2124" />
+            <path
+              d="M149.343 24.7161L148.846 25.1696C148.61 24.8383 148.34 24.6726 148.034 24.6726C147.813 24.6726 147.63 24.7379 147.485 24.8683C147.34 24.9987 147.268 25.1623 147.268 25.359C147.268 25.5164 147.317 25.652 147.417 25.7659C147.467 25.8197 147.539 25.8808 147.635 25.9491C147.732 26.0175 147.853 26.093 147.999 26.1759C148.429 26.416 148.718 26.6334 148.863 26.8281C149.01 27.0248 149.084 27.2826 149.084 27.6014C149.084 28.0155 148.941 28.351 148.655 28.6077C148.373 28.8645 148.002 28.9928 147.54 28.9928C147.168 28.9928 146.853 28.9162 146.595 28.763C146.465 28.6864 146.344 28.587 146.231 28.4648C146.119 28.3406 146.01 28.1905 145.906 28.0145L146.472 27.648C146.625 27.9068 146.776 28.0849 146.923 28.1822C147.071 28.2795 147.262 28.3282 147.498 28.3282C147.76 28.3282 147.965 28.2619 148.112 28.1294C148.262 27.9969 148.336 27.8085 148.336 27.5642C148.336 27.3964 148.282 27.2546 148.174 27.1387C148.12 27.0786 148.039 27.0113 147.93 26.9368C147.824 26.8622 147.689 26.7784 147.524 26.6852C147.147 26.4719 146.884 26.269 146.735 26.0765C146.592 25.8839 146.52 25.6427 146.52 25.3528C146.52 24.9656 146.661 24.6447 146.943 24.39C147.224 24.1333 147.579 24.0049 148.008 24.0049C148.288 24.0049 148.526 24.0587 148.723 24.1664C148.924 24.2741 149.131 24.4573 149.343 24.7161Z"
+              fill="#ED2124" />
+            <path
+              d="M153.998 24.7161L153.501 25.1696C153.265 24.8383 152.994 24.6726 152.688 24.6726C152.468 24.6726 152.285 24.7379 152.139 24.8683C151.994 24.9987 151.922 25.1623 151.922 25.359C151.922 25.5164 151.972 25.652 152.071 25.7659C152.121 25.8197 152.194 25.8808 152.289 25.9491C152.386 26.0175 152.508 26.093 152.653 26.1759C153.084 26.416 153.372 26.6334 153.517 26.8281C153.664 27.0248 153.738 27.2826 153.738 27.6014C153.738 28.0155 153.595 28.351 153.309 28.6077C153.027 28.8645 152.656 28.9928 152.195 28.9928C151.822 28.9928 151.507 28.9162 151.249 28.763C151.119 28.6864 150.998 28.587 150.886 28.4648C150.773 28.3406 150.665 28.1905 150.561 28.0145L151.126 27.648C151.28 27.9068 151.43 28.0849 151.577 28.1822C151.725 28.2795 151.916 28.3282 152.152 28.3282C152.414 28.3282 152.619 28.2619 152.766 28.1294C152.916 27.9969 152.991 27.8085 152.991 27.5642C152.991 27.3964 152.936 27.2546 152.828 27.1387C152.774 27.0786 152.693 27.0113 152.584 26.9368C152.478 26.8622 152.343 26.7784 152.178 26.6852C151.802 26.4719 151.538 26.269 151.389 26.0765C151.246 25.8839 151.175 25.6427 151.175 25.3528C151.175 24.9656 151.315 24.6447 151.597 24.39C151.878 24.1333 152.234 24.0049 152.662 24.0049C152.942 24.0049 153.18 24.0587 153.377 24.1664C153.579 24.2741 153.785 24.4573 153.998 24.7161Z"
+              fill="#ED2124" />
+          </svg>
+        </div>
+      </div>
+      <!--  Top Title End  -->
+      <!-- Card Start -->
+      <div class=" " style="gap: 12px; display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 27px;">
+        <div style="padding: 9px;border: 0.5px solid #D7DAE0; flex-grow: 1;">
+          <h5 class="fs-6 fw-600 primary" style="margin-bottom: 10px">Driver information</h5>
+          <div class="flex items-center " style="gap: 8px;">
+            <img src="./profile.png" style="width: 36px; height: 36px;" />
+            <div>
+              <h6 class="fs-10 fw-500 accent">Annette de Black</h6>
+              <p class="primary fs-8 fs-400" style="margin-top: 3px; gap: 12px; ">DR1235486</p>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 9px;border: 0.5px solid #D7DAE0; flex-grow: 1;" class="flex align-items justify-between">
+          <div>
+            <h5 class="primary fw-500 fs-10">
+              Booking
+            </h5>
+            <h6 class="fw-500 fs-12 " style="color: #000; margin-top: 4px; margin-bottom: 10px;">125</h6>
+            <p class="fs-6 black_75 fw-500"> <span class="primary">88.2%</span> more earnings than last month.</p>
+          </div>
+          <div>
+            <div class="progress-ring" id="progressRing">
+              <svg>
+                <circle class="bg" cx="27" cy="27" r="21"></circle>
+                <circle class=" progress" cx="27" cy="27" r="21"></circle>
+              </svg>
+              <div class=" progress-text">
+                <div class="percentage primary fs-8 fw-600">88%</div>
+                <div class="month fw-400">May 2024</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 9px;border: 0.5px solid #D7DAE0; flex-grow: 1;" class="flex align-items justify-between">
+          <div>
+            <h5 class="primary fw-500 fs-10">
+              Incentive
+            </h5>
+            <h6 class="fw-500 fs-12 " style="color: #000; margin-top: 4px; margin-bottom: 10px;">RM 3,180</h6>
+            <p class="fs-6 black_75 fw-500"> <span class="primary">68.2%</span> more earnings than last month.</p>
+          </div>
+          <div>
+            <div class="progress-ring1" id="progressRing1">
+              <svg>
+                <circle class="bg1" cx="27" cy="27" r="21"></circle>
+                <circle class="progress1" cx="27" cy="27" r="21"></circle>
+              </svg>
+              <div class="progress-text1">
+                <div class="percentage1">88%</div>
+                <div class="month1">May 2024</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card End -->
+      <!--  Chart Start From here -->
+      <div class="" style="padding: 14px 0px;  border: 0.5px solid #DFDFDF; margin-top: 16px;">
+        <div class="flex  items-center justify-between " style="padding: 0px 11px">
+          <h6 class="primary fs-10 fw-500 ">Booking & Incentive</h6>
+          <div class="flex items-center " style="gap: 10px;">
+            <div class="flex items-center " style="gap: 4px;">
+              <p class="primary fs-6">RM</p>
+              <span class="fs-6" style="color: black">Malaysian Ringgit</span>
+            </div>
+            <div class="flex items-center " style="gap: 4px;">
+              <p class="primary fs-6">BK</p>
+              <span class="fs-6" style="color: black">Booking</span>
+            </div>
+            <div>
+
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="./1.png" alt="" class="" style="width: 100%; height: auto;">
+        </div>
+      </div>
+      <!--  Chart End here  -->
+
+      <!--  Table Start From Here -->
+      <div class="">
+        <div>
+          <div class="tbl_header">
+            <h3 class="fs-8 fw-500 text_primary_color text-capitalize">Booking Summary</h3>
+          </div>
+          <table>
+            <thead>
+
+              <tr>
+                <th>S.I</th>
+                <th>S.I</th>
+                <th>S.I</th>
+                <th>S.I</th>
+                <th>S.I</th>
+                <th>S.I</th>
+                <th>S.I</th>
+                <th>S.I</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+      <!--  Table End From Here -->
+    </div>
+  </div>
+  <script>
+    const progressRing = document.getElementById('progressRing');
+    const progressCircle = progressRing.querySelector('.progress-ring .progress');
+    const radius = progressCircle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+
+    progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+    progressCircle.style.strokeDashoffset = `${circumference}`;
+
+    function setProgress(percent) {
+      const offset = circumference - (percent / 100 * circumference);
+      console.log(offset)
+      progressCircle.style.strokeDashoffset = offset;
+    }
+    setProgress(90);
+
+    const progressRing1 = document.getElementById('progressRing1');
+    const progressCircle1 = progressRing1.querySelector('.progress-ring1 .progress1');
+    const radius1 = progressCircle1.r.baseVal.value;
+    const circumference1 = 2 * Math.PI * radius1;
+
+    progressCircle1.style.strokeDasharray = `${circumference1} ${circumference1}`;
+    progressCircle1.style.strokeDashoffset = `${circumference1}`;
+
+    function setProgress1(percent) {
+      const offset1 = circumference1 - (percent / 100 * circumference1);
+      progressCircle1.style.strokeDashoffset = offset1;
+    }
+    setProgress1(90);
+  </script>
+</body>
+
+</html>
